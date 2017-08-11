@@ -27,15 +27,25 @@ float position(float t) {
 
 void setup()
 {
-  size (800,300);
+  size (800,600);
   smooth();
-  background(0,100,0);
   stroke(0);
+  fill(255);
+  strokeWeight(1);
+  rect(200, 350, 400, 200);
 }
 
 void draw()
-{ background(0,100,0);
+{ noStroke();
+  fill(0,100,0);
+  rect(0,0,200,600);
+  rect(0,0,800,350);
+  rect(200,550,400,50);
+  rect(600,0,200,600);
+  
+  
   strokeWeight(1);
+  stroke(0);
   int XPos;
   XPos = int(position(time));
   fill(255,0,0);
@@ -71,6 +81,22 @@ void draw()
   fill(255);
   textAlign(CENTER);
   text("Linear velocity", 600, 255);
+  
+  strokeWeight(1);
+  stroke(0);
+  fill(0);
+  ellipse(400+time*40,550-dt*150, 5, 5); 
+  
+  textSize(12);
+  fill(255);
+  textAlign(CENTER);
+  text("Time", 400, 560);
+  
+  textSize(12);
+  fill(255);
+  textAlign(RIGHT);
+  text("Rotational", 195, 440);
+  text("Velocity", 195, 460);
   
   time = time + 0.01;
   if (time>5.01) {
